@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=telma@700,500,400&display=swap"
+      rel="stylesheet"
+    />
+    <title>Shakespeare Translator</title>
+  </head>
+  <body>
+    <header>
+      Shakespeare Translator
+      <img
+        src="https://res.cloudinary.com/rk03/image/upload/v1661807420/icons8-william-shakespeare-100_lfyoea.png"
+        alt="shakespeare icon"
+      />
+    </header>
+    <main>
+      <textarea
+        class="text-input"
+        placeholder="Put your message here to translate"
+      ></textarea>
+      <button class="translate-button">Translate</button>
+      <div class="output-wrapper">
+        <span>The translation will appear here 👇</span>
+        <div class="text-output"></div>
+      </div>
+    </main>
+    <footer>
+      <h2>About</h2>
+      <p>
+        Shakespeare's plays were never easy to comprehend. This converter will
+        convert standard English to Shakespearean English.
+      </p>
+    </footer>
+  </body>
+  <script src="index.js"></script>
+</html>

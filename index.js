@@ -6,7 +6,13 @@ document.querySelector(".translate-button").addEventListener("click", () => {
     `https://api.funtranslations.com/translate/shakespeare.json?text=${text}`
   )
     .then((response) => {
-      return response.json();
+      if (response.ok) {
+        return response.json();
+      } else if (response.status === 429) {
+        throw new Error("Request limit reached");
+      } else {
+        throw new Error("Something went wrong");
+      }
     })
     .then((data) => {
       document.querySelector(".text-output").innerText =
@@ -14,7 +20,8 @@ document.querySelector(".translate-button").addEventListener("click", () => {
       document.querySelector(".translate-button").innerText = "Translate";
     })
     .catch((error) => {
-      alert("Something went wrong");
+      alert(error);
       document.querySelector(".translate-button").innerText = "Translate";
+      console.log(error);
     });
 });
